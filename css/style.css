@@ -1,0 +1,312 @@
+@font-face {
+  font-family: "GmarketSansLight";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff")
+    format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SF_HambakSnow";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HambakSnow.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+* {
+  font-family: "GmarketSansMedium";
+}
+
+.container {
+  position: absolute;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* SVG 스타일 */
+svg {
+  position: absolute;
+  display: block;
+  margin: 50px auto;
+  max-width: 100%;
+  height: 35%;
+  left: 24%;
+}
+
+/* path와 ellipse에 애니메이션을 적용할 초기 설정 */
+path,
+ellipse {
+  stroke-dasharray: 500; /* 경로의 길이 (대략적인 값으로 설정) */
+  stroke-dashoffset: 500; /* 시작점에서 선을 숨김 */
+  transition: stroke-dashoffset 3s ease-out; /* 애니메이션 효과 설정 */
+}
+
+/* 제목 스타일 - 노란색 네온 효과 */
+.tittle {
+  font-family: "SF_HambakSnow";
+  position: absolute;
+  top: 70px;
+  font-size: 3.8rem;
+  color: #fff59d; /* 중심 텍스트 색상: 부드러운 밝은 노란색 */
+  left: 50%;
+  transform: translateX(60%);
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: 8px;
+  text-shadow: 0 0 5px #ffeb3b, /* 중심 밝은 노란빛 */ 0 0 10px #ffd700,
+    /* 중간 노란빛 */ 0 0 20px #ffcc33,
+    /* 더 퍼지는 진한 노란빛 */ 0 0 30px #ffb300,
+    /* 외곽부 어두운 노란빛 */ 0 0 50px #ffcc00,
+    /* 바깥쪽 확산된 노란빛 */ 0 0 80px #ffaa00; /* 최외곽 황금빛 */
+  animation: neon-glow-yellow 2s ease-in-out infinite alternate;
+}
+
+/* 부드러운 노란색 네온 애니메이션 */
+@keyframes neon-glow-yellow {
+  0% {
+    text-shadow: 0 0 5px #ffeb3b, 0 0 10px #ffd700, 0 0 20px #ffcc33,
+      0 0 30px #ffb300, 0 0 50px #ffcc00, 0 0 80px #ffaa00;
+    color: #ffea74; /* 중심 색상 */
+  }
+  100% {
+    text-shadow: 0 0 8px #ffd700, 0 0 15px #ffcc33, 0 0 25px #ffb300,
+      0 0 40px #ffcc00, 0 0 60px #ffaa00, 0 0 90px #ff8800;
+    color: #fff9c4; /* 더 밝은 중심 색상 */
+  }
+}
+
+/* 부제목 스타일 - 파란색 네온 효과 */
+.subtitle {
+  position: absolute;
+  top: 30px;
+  font-size: 1.2rem;
+  color: #28d7fe; /* 중심 텍스트 색상 */
+  text-align: center;
+  left: 50%;
+  transform: translateX(97%);
+  letter-spacing: 1px;
+  white-space: nowrap;
+  text-shadow: 0 0 2px #1041ff, 0 0 5px #1041ff, 0 0 10px #1041ff,
+    0 0 20px #1041ff, 0 0 30px #28d7fe, 0 0 40px #28d7fe;
+  animation: neon-glow-blue 2s ease-in-out infinite alternate;
+}
+
+/* 부제목 애니메이션 - 파란색 네온 */
+@keyframes neon-glow-blue {
+  0% {
+    text-shadow: 0 0 2px #1041ff, 0 0 5px #28d7fe, 0 0 10px #28d7fe,
+      0 0 20px #1041ff, 0 0 30px #1041ff, 0 0 40px #28d7fe;
+    color: #28d7fe;
+  }
+  100% {
+    text-shadow: 0 0 2x #1041ff, 0 0 5px #1041ff, 0 0 10px #28d7fe,
+      0 0 20px #28d7fe, 0 0 30px #1041ff, 0 0 40px #28d7fe;
+    color: #1a75ff;
+  }
+}
+
+/* 밤하늘 배경 */
+#container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+}
+
+#pixie {
+  position: absolute;
+  width: 100%;
+  height: 60%;
+  z-index: 1;
+}
+
+/* 배경 이미지 */
+.background {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 103vw;
+  height: 103vh;
+  background-size: cover;
+}
+
+.letter {
+  position: absolute;
+  top: 60px;
+  left: 5%;
+  width: 6vw;
+  height: auto;
+  z-index: 100;
+  animation: fadeIn 3s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; /* 투명 상태 */
+  }
+  100% {
+    opacity: 1; /* 불투명 상태 */
+  }
+}
+
+/* 날짜 스타일 */
+.date {
+  position: absolute;
+  top: 220px;
+  font-size: 1.5rem;
+  color: #e1def3;
+  left: 37%;
+  transform: translateX(0%);
+  text-align: center;
+  line-height: 2; /* 줄 간격 설정 */
+  letter-spacing: 2px; /* 문자 간격 */
+  white-space: nowrap;
+}
+.date .light {
+  font-family: "GmarketSansLight";
+}
+
+/* SplitType으로 분할된 문자 스타일 */
+.date .char {
+  display: inline-block; /* 문자들이 가로로 나열되도록 */
+  transform-origin: bottom; /* 애니메이션 기준점 아래로 */
+  font-family: inherit; /* 부모 글꼴 상속 */
+  font-weight: inherit; /* 부모 글씨 굵기 상속 */
+}
+
+.Daegu {
+  position: absolute;
+  bottom: 3%;
+  right: 16%;
+  width: 10vw;
+  height: auto;
+  z-index: 100;
+}
+
+.Culture {
+  position: absolute;
+  bottom: 3%;
+  right: 3%;
+  width: 12vw;
+  height: auto;
+  z-index: 100;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* 화면 밖으로 나가는 풍등 숨김 */
+  height: 100vh;
+}
+
+.sky {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* 위로 올라가는 풍등 스타일 */
+.lantern {
+  position: absolute;
+  bottom: 0;
+  animation: floatUp linear infinite;
+  will-change: transform, opacity;
+}
+
+/* 흔들리는 풍등 스타일 */
+.swinging-lantern {
+  position: absolute;
+  animation: swing 3s ease-in-out infinite; /* 좌우로 흔들리는 애니메이션 적용 (속도 조금 빠르게) */
+  transform-origin: 50% 100%; /* 아래쪽 중심을 기준으로 흔들리도록 설정 */
+  z-index: 2; /* 필요에 따라 z-index 설정 */
+}
+
+/* 블러 처리된 풍등 스타일 */
+.blurred-lantern {
+  position: absolute;
+  filter: blur(3px); /* 블러 효과 추가 */
+  opacity: 0.7; /* 약간 흐릿하게 */
+  animation: floatUpBlurred linear infinite; /* 애니메이션 바로 시작 */
+}
+
+/* 블러 처리된 풍등이 위로 올라가는 애니메이션 정의 */
+@keyframes floatUpBlurred {
+  0% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-120vh);
+    opacity: 0; /* 점점 사라지게 */
+  }
+}
+
+/* 블러 처리된 풍등이 위로 올라가는 애니메이션 정의 */
+@keyframes floatUpBlurred {
+  0% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-120vh);
+    opacity: 0; /* 점점 사라지게 */
+  }
+}
+
+/* 풍등이 위로 날아가는 애니메이션 정의 */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh);
+    opacity: 0; /* 점점 사라지게 */
+  }
+}
+
+/* 클릭된 풍등이 위로 날아가는 애니메이션 정의 */
+@keyframes floatUpClicked {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh);
+    opacity: 0;
+  }
+}
+
+/* 흔들리는 애니메이션 정의 */
+@keyframes swing {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg); /* 흔들리는 각도 증가 */
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-5deg); /* 흔들리는 각도 증가 */
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

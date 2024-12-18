@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/index.js"></script>
+    <title>대구 달구벌 관등 놀이</title>
+
+    <!-- date -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <svg xmlns="http://www.w3.org/2000/svg" width="766" height="21" viewBox="0 0 766 21" fill="none">
+      <ellipse cx="5.68812" cy="5.22483" rx="5.68812" ry="5.22483" transform="matrix(1 0 0 -1 0 18.8599)" fill="#FFFCC1" fill-opacity="0.3"/>
+      <path d="M9.63463 13.635C9.63463 11.8476 8.00996 10.1518 5.68812 10.1518C3.36628 10.1518 1.74161 11.8476 1.74161 13.635C1.74161 15.4224 3.36628 17.1183 5.68812 17.1183C8.00996 17.1183 9.63463 15.4224 9.63463 13.635Z" stroke="#FFFCC1" stroke-opacity="0.3" stroke-width="3.48322"/>
+      <ellipse cx="3.79208" cy="3.48322" rx="3.79208" ry="3.48322" transform="matrix(1 0 0 -1 18.9606 15.7246)" fill="#FFFCC1" fill-opacity="0.3"/>
+      <path d="M25.674 12.2414C25.674 10.8668 24.4372 9.62897 22.7527 9.62897C21.0682 9.62897 19.8314 10.8668 19.8314 12.2414C19.8314 13.616 21.0682 14.8538 22.7527 14.8538C24.4372 14.8538 25.674 13.616 25.674 12.2414Z" stroke="#FFFCC1" stroke-opacity="0.3" stroke-width="1.74161"/>
+      <path d="M60.6731 12.2416L47.7246 19.0381C47.5219 19.1445 47.2798 19.1445 47.0771 19.0381L34.1285 12.2416" stroke="#FFFCC1" stroke-opacity="0.3" stroke-width="2.43826" stroke-linecap="round"/>
+      <path d="M60.6732 12.2418L47.7247 5.44533C47.5219 5.33892 47.2798 5.33892 47.0771 5.44533L34.1286 12.2418" stroke="#FFFCC1" stroke-opacity="0.3" stroke-width="2.43826" stroke-linecap="round"/>
+      <path d="M705.327 12.2417H60.6732" stroke="#FFFCC1" stroke-opacity="0.3" stroke-width="2.43826" stroke-linecap="round"/>
+      <path d="M697.742 1.79199H68.2571" stroke="#FFFCC1" stroke-opacity="0.3" stroke-width="2.08993" stroke-linecap="round"/>
+      <ellipse cx="760.312" cy="13.635" rx="5.68812" ry="5.22483" transform="rotate(-180 760.312 13.635)" fill="#FFFCC1" fill-opacity="0.3"/>
+      <path d="M756.365 13.635C756.365 11.8476 757.99 10.1518 760.312 10.1518C762.634 10.1518 764.258 11.8476 764.258 13.635C764.258 15.4224 762.634 17.1183 760.312 17.1183C757.99 17.1183 756.365 15.4224 756.365 13.635Z" stroke="#FFFCC1" stroke-opacity="0.3" stroke-width="3.48322"/>
+      <ellipse cx="743.248" cy="12.2414" rx="3.79208" ry="3.48322" transform="rotate(-180 743.248 12.2414)" fill="#FFFCC1" fill-opacity="0.3"/>
+      <path d="M740.326 12.2414C740.326 10.8668 741.563 9.62897 743.248 9.62897C744.932 9.62897 746.169 10.8668 746.169 12.2414C746.169 13.616 744.932 14.8538 743.248 14.8538C741.563 14.8538 740.326 13.616 740.326 12.2414Z" stroke="#FFFCC1" stroke-opacity="0.3" stroke-width="1.74161"/>
+      <path d="M705.326 12.2418L718.275 5.44533C718.478 5.33892 718.72 5.33892 718.922 5.44533L731.871 12.2418" stroke="#FFFCC1" stroke-opacity="0.3" stroke-width="2.43826" stroke-linecap="round"/>
+      <path d="M705.326 12.2416L718.275 19.0381C718.478 19.1445 718.72 19.1445 718.922 19.0381L731.871 12.2416" stroke="#FFFCC1" stroke-opacity="0.3" stroke-width="2.43826" stroke-linecap="round"/>
+      </svg>
+
+    <div id="container">
+      <canvas id="pixie"></canvas>
+    </div>
+
+    <img src="img/BG.png" alt="BG" class="background" />
+    <img src="img/letter.png" alt="ketter" class="letter" />
+    <img src="img/Daegu.png" alt="Daegu" class="Daegu" />
+    <img src="img/Culture.png" alt="Culture" class="Culture" />
+
+    <div class="container">
+      <div class="tittle">대구 달구벌 관등 놀이</div>
+      <div class="subtitle">
+        “마음 愛 자비를! 세상 愛 평화를! 불기 2568(2024)년”
+      </div>
+    </div>
+
+    <div class="date">
+      <p>
+        <span class="light">2024.</span>05.03
+        <span class="light"> (금) - </span> 05.06 <span class="light"> (월) </span><br />
+        <span class="light">중등교 신천둔지</span>
+      </p>
+    </div>
+
+    <div class="sky">
+  </body>
+</html>
